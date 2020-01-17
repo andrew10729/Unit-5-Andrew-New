@@ -1,7 +1,7 @@
 
 
 
-public class Num {
+public class Num implements Comparable {
     private int value;
 
     public Num(int value) {//constructor
@@ -18,17 +18,20 @@ public class Num {
         this.value = value;
     }
 
-   public String toString(){
+    public String toString(){
       return "" + value;
 
-   }
+    }
 
-   public boolean equals(Num otherNum){
+    public boolean equals(Num otherNum){
         return this.value == otherNum.value;
 
-   }
+    }
 
-
+    public int compareTo(Object other) {
+        Num otherNum = (Num) other;
+        return this.getValue() - otherNum.getValue();
+    }
 
 
 
